@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>My Daily Schedule Simulation</title>
 </head>
-<body style="font-family: sans-serif; text-align: center; padding-top: 60px; background-color: #eef;">
+<body style="font-family: sans-serif; text-align: center; padding-top: 80px; background-color: rgb(251, 231, 255);">
 
   <h1>My Simulated Day</h1>
   <div id="output" style="margin-top: 40px; font-size: 1.5rem;"></div>
@@ -12,38 +12,51 @@
   <script>
     const output = document.getElementById("output");
     const moods = ["happy", "productive", "relaxed", "tired", "energetic"];
+    const colors = ["rgb(251, 231, 255)", "rgb(204, 229, 255)", "rgb(204, 255, 229)", "rgb(255, 229, 204)", "rgb(255, 204, 229)"];
+
 
     function showActivity(text, delay) {
     setTimeout(() => {
       output.textContent = text;
     }, delay);
   }
+  let colorIndex = 0;
 
-showActivity("8:00 AM - Wake up and stretch", 1000);
+function showActivity(text, delay) {
+  setTimeout(() => {
+    output.textContent = text;
+    document.body.style.backgroundColor = colors[colorIndex];
+    colorIndex = (colorIndex + 1) % colors.length;
 
-showActivity("9:00 AM - Have breakfast", 3000);
+  }, delay);
+}
 
-showActivity("10:00 AM - Start doing assignments", 5000);
 
-showActivity("12:00 PM - Take a break and go for a walk", 7000);
+showActivity("8:00 AM - 🌅Wake up and stretch🧘🏽‍♀️", 1000);
 
-showActivity("1:00 PM - Have lunch", 9000);
+showActivity("9:00 AM - 🥞Have breakfast☕", 3000);
 
-showActivity("2:00 PM - Continue working on assignments", 11000);
+showActivity("10:00 AM - 🖥️Start doing assignments📃", 5000);
 
-showActivity("4:00 PM - Finish assignments and get sleepy, nap time!", 13000);
+showActivity("12:00 PM -🚶🏽‍♀️ Take a break and go for a walk☀️", 7000);
 
-showActivity("5:00 PM - Just woke up....", 15000);
+showActivity("1:00 PM - 🍲Have lunch😋", 9000);
+
+showActivity("2:00 PM - ✍🏼Continue working on assignments👩‍🏫", 11000);
+
+showActivity("4:00 PM - 🥱Finish assignments and get sleepy, nap time!🪫", 13000);
+
+showActivity("5:00 PM - 😵Just woke up....🔋", 15000);
 
 setTimeout(() => {
     const randomMood = moods[Math.floor(Math.random() * moods.length)];
-    output.textContent = `Suprise mood time! You're curretnly feeling:' ${randomMood}`;
+    output.textContent = `🪄Surprise mood time! You're currently feeling: ${randomMood}🪄`;
   }, 13000);
-showActivity("6:00 PM - Prepare and have dinner", 17000);
+showActivity("6:00 PM - 🧹Prepare and have dinner👩🏽‍🍳", 17000);
 
-showActivity("7:00 PM - Play videogames and talk with friends", 19000);
+showActivity("7:00 PM - 🎮Play videogames and talk with friends🌟", 19000);
 
-showActivity("11:00 PM -Wash up and now its time to go to sleep!", 21000);
+showActivity("🛁11:00 PM -Wash up and now its time to go to sleep!🪥", 21000);
     
     
   </script>
