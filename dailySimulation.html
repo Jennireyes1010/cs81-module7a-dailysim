@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Daily Schedule Simulation</title>
+</head>
+<body style="font-family: sans-serif; text-align: center; padding-top: 60px; background-color: #eef;">
+
+  <h1>My Simulated Day</h1>
+  <div id="output" style="margin-top: 40px; font-size: 1.5rem;"></div>
+
+  <script>
+    const output = document.getElementById("output");
+    const moods = ["happy", "productive", "relaxed", "tired", "energetic"];
+
+    function showActivity(text, delay) {
+    setTimeout(() => {
+      output.textContent = text;
+    }, delay);
+  }
+
+showActivity("8:00 AM - Wake up and stretch", 1000);
+
+showActivity("9:00 AM - Have breakfast", 3000);
+
+showActivity("10:00 AM - Start doing assignments", 5000);
+
+showActivity("12:00 PM - Take a break and go for a walk", 7000);
+
+showActivity("1:00 PM - Have lunch", 9000);
+
+showActivity("2:00 PM - Continue working on assignments", 11000);
+
+showActivity("4:00 PM - Finish assignments and get sleepy, nap time!", 13000);
+
+showActivity("5:00 PM - Just woke up....", 15000);
+
+setTimeout(() => {
+    const randomMood = moods[Math.floor(Math.random() * moods.length)];
+    output.textContent = `Surprise mood check! You are feeling: ${randomMood}`;
+  }, 13000);
+showActivity("6:00 PM - Prepare and have dinner", 17000);
+
+showActivity("7:00 PM - Play videogames with freinds", 19000);
+
+showActivity("11:00 PM -Wash up and now its time to go to sleep!", 21000);
+    
+    
+  </script>
+
+</body>
+</html>
